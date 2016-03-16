@@ -1,7 +1,9 @@
 var CLIEngine = require('eslint').CLIEngine;
 var chalk = require('chalk');
+var indentString = require('indent-string');
 var globAll = require('glob-all');
 var replaceAll = require("replaceall");
+
 var cli = new CLIEngine({});
 
 
@@ -31,7 +33,7 @@ function test(p, opts) {
         var error = new Error(
           chalk.red('Code did not pass lint rules') +
           // remove process.cwd() to convert absolute to relative paths
-          replaceAll(process.cwd() + '/', '', formatter(report.results))
+          indentString(replaceAll(process.cwd() + '/', '', formatter(report.results)), ' ', 5)
         )
         error.stack = ''
 
