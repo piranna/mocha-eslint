@@ -28,11 +28,14 @@ function test(p, opts) {
 
     if (report) {
       if (report.errorCount > 0 || opts.strict && report.warningCount > 0) {
-        throw new Error(
+        var error = new Error(
           chalk.red('Code did not pass lint rules') +
           // remove process.cwd() to convert absolute to relative paths
           replaceAll(process.cwd() + '/', '', formatter(report.results))
-        );
+        )
+        error.stack = ''
+
+        throw error;
       } else if (
         warn &&
         report.warningCount > 0
