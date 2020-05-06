@@ -4,7 +4,9 @@
   "description": "run ESLint as mocha tests",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/runner"
+    "test": "node tests/runner",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "mocha",
@@ -17,7 +19,8 @@
     "chalk": "^1.1.0",
     "eslint": "^2.0.0",
     "glob-all": "^3.0.1",
-    "replaceall": "^0.1.6"
+    "replaceall": "^0.1.6",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "es6-promise": "^3.1.2",
@@ -30,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/BadgeLabs/mocha-eslint/issues"
   },
-  "homepage": "https://github.com/BadgeLabs/mocha-eslint"
+  "homepage": "https://github.com/BadgeLabs/mocha-eslint",
+  "snyk": true
 }
