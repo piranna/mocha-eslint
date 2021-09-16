@@ -14,8 +14,8 @@
   "author": "Ian VanSchooten",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^1.1.0",
-    "eslint": "^2.0.0",
+    "chalk": "^2.0.0",
+    "eslint": "^7.3.0",
     "glob-all": "^3.0.1",
     "replaceall": "^0.1.6"
   },
